@@ -86,6 +86,7 @@ const recipeController = async (event) => {
             window.r = state.recipe
             // 5. Render UI
             delWaitingIcon(element.recipeContainer)
+
             recipeView.renderRecipe(state.recipe, state.likes.isLiked(recipeId))
         } catch (error) {
             alert('Processing recipe error')
@@ -184,6 +185,7 @@ window.addEventListener('load', event => {
         if (state.likes.likes) {
             state.likes.likes.forEach(el => likesView.renderLikes(el))
         }
+
     }
 })
 window.state = state
